@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contacto - Israel Guachalla</title>
+  <link rel="stylesheet" href="contacto.css">
+  </head>
+<body>
+  <main class="contacto-contenedor">
+    <h1>Contacto</h1>
+    <p>Gracias por visitar mi sitio. Aquí encontrarás las formas más fáciles para comunicarte conmigo y ver mis redes sociales.</p>
+
+    <div class="contacto-lista">
+      <div class="contacto-item">
+        <h2>WhatsApp</h2>
+        <a href="https://wa.me/59165571851" target="_blank">59165571851</a>
+      </div>
+      <div class="contacto-item">
+        <h2>Instagram</h2>
+        <a href="https://www.instagram.com/d22_azzr.fx?igsh=MmNqcXRwdzZ0enEx" target="_blank">@d22_azzr.fx</a>
+      </div>
+      <div class="contacto-item">
+        <h2>Facebook</h2>
+        <a href="https://www.facebook.com/share/1B2pwtHwh8/" target="_blank">Israel en Facebook</a>
+      </div>
+      <div class="contacto-item">
+        <h2>Ubicación</h2>
+        <p>Bolivia</p>
+      </div>
+    </div>
+
+    <div class="volver">
+      <a href="index.html">← Volver al inicio</a>
+    </div>
+  </main>
+  <script src="js1.js"></script>
+  <script src="js2.js"></script>
+  <script>
+    // Aplicar modo guardado (dark | light) al cargar esta página (sin toggle aquí)
+    (function(){
+      const modoGuardado = localStorage.getItem('modo') || 'dark';
+      if (modoGuardado === 'dark') {
+        document.body.classList.add('dark-mode');
+        document.body.classList.remove('light-mode');
+      } else {
+        document.body.classList.add('light-mode');
+        document.body.classList.remove('dark-mode');
+      }
+    })();
+  </script>
+</body>
+</html>

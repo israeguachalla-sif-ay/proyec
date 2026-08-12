@@ -1,0 +1,193 @@
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  font-family: 'Inter', 'Poppins', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background: radial-gradient(circle at top, rgba(16, 82, 214, 0.16) 0%, rgba(8, 16, 42, 0.95) 35%, #02050e 100%);
+  color: #eef4ff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow-x: hidden;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(circle at top right, rgba(93, 215, 255, 0.06), transparent 22%), radial-gradient(circle at left bottom, rgba(92, 151, 255, 0.08), transparent 24%);
+  pointer-events: none;
+  z-index: -1;
+}
+
+.contacto-contenedor {
+  width: min(980px, 95%);
+  padding: 50px 35px;
+  background: rgba(5, 11, 32, 0.94);
+  border-radius: 28px;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.28);
+  backdrop-filter: blur(14px);
+  text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.contacto-contenedor h1 {
+  margin: 0 0 20px;
+  font-size: clamp(3rem, 5vw, 4.5rem);
+  letter-spacing: -0.03em;
+  background: linear-gradient(90deg, #77c7ff 0%, #96e4ff 45%, #9de9d2 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.contacto-contenedor p {
+  font-size: 1.05rem;
+  line-height: 1.85;
+  margin: 0 auto 35px;
+  max-width: 760px;
+  color: rgba(224, 234, 255, 0.92);
+}
+
+.contacto-lista {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 22px;
+  margin-bottom: 35px;
+}
+
+.contacto-item {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  padding: 24px 20px;
+  border-radius: 18px;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.25);
+}
+
+.contacto-item h2 {
+  margin: 0 0 12px;
+  font-size: 1.25rem;
+  color: #eef5ff;
+}
+
+.contacto-item a,
+.contacto-item p {
+  margin: 0;
+  font-size: 1rem;
+  color: rgba(223, 232, 255, 0.94);
+  text-decoration: none;
+  word-break: break-word;
+}
+
+.contacto-item a:hover {
+  color: #0077b6;
+}
+
+.volver {
+  margin-top: 15px;
+}
+
+.volver a {
+  display: inline-block;
+  background: linear-gradient(135deg, #5d8dff, #4ed7ff);
+  color: #081828;
+  padding: 14px 30px;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 700;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.volver a:hover {
+  transform: translateY(-2px);
+  background-color: #005f8c;
+}
+
+@media (max-width: 600px) {
+  .contacto-contenedor {
+    padding: 28px 20px;
+  }
+
+  .contacto-contenedor h1 {
+    font-size: 2.4rem;
+  }
+}
+
+/* Modo claro */
+body.light-mode {
+  background: #ffffff;
+  color: #0f1724;
+}
+
+body.light-mode .contacto-contenedor {
+  background: #ffffff;
+  color: #0f1724;
+  border: 1px solid rgba(15,23,36,0.06);
+  box-shadow: 0 18px 40px rgba(2,6,23,0.06);
+}
+
+body.light-mode .contacto-item {
+  background: #fbfdff;
+  border: 1px solid rgba(15,23,36,0.06);
+  color: #0f1724;
+}
+
+/* Texto más legible en modo claro */
+body.light-mode p,
+body.light-mode .contacto-contenedor p,
+body.light-mode .contacto-item p,
+body.light-mode .contacto-item a {
+  font-size: 1.12rem;
+  line-height: 1.9;
+}
+
+body.light-mode .contacto-contenedor h1 {
+  font-size: clamp(3.2rem, 4vw, 4.6rem);
+}
+
+body.light-mode .volver a {
+  background: linear-gradient(135deg, #5d8dff, #4ed7ff);
+  color: #081828;
+}
+
+/* Colores de texto en modo claro para contacto */
+body.light-mode h1,
+body.light-mode h2,
+body.light-mode h3 {
+  color: #0f1724;
+}
+
+body.light-mode p,
+body.light-mode a,
+body.light-mode li,
+body.light-mode span {
+  color: #1f2937;
+}
+
+body.light-mode .contacto-item h2,
+body.light-mode .contacto-item a,
+body.light-mode .contacto-item p {
+  color: #0f1724;
+}
+
+/* Texto notorio en modo claro */
+body.light-mode h1,
+body.light-mode h2,
+body.light-mode h3 {
+  color: #1d4ed8;
+}
+
+body.light-mode p,
+body.light-mode a,
+body.light-mode li,
+body.light-mode span {
+  color: #0b1220;
+}
+
+body.light-mode nav a,
+body.light-mode a {
+  color: #1d4ed8;
+}

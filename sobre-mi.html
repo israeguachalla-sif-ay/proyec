@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Más sobre mí - Juan Carlos Aruquipa</title>
+  <link rel="stylesheet" href="sobre-mi.css">
+</head>
+<body>
+
+  <h1>Conóceme Mejor</h1>
+
+  <main>
+    <section class="foto" aria-label="Foto de Israel Fernandez">
+      <img src="yo3.jpeg" alt="Israel Guachalla Fernandez" />
+    </section>
+
+    <section class="info">
+      <p>Hola, soy <strong>Israel Guachalla Fernandez</strong>, tengo 19 años y actualmente estoy estudiando la carrera de <strong>Sistemas Informáticos</strong>. Me apasiona el mundo del desarrollo web y estoy comprometido en convertirme en un gran diseñador y programador web.</p>
+      <p>Estoy aprendiendo con dedicación cada día, en especial en la materia de <strong>Diseño y Programación Web</strong>, que considero una puerta a muchas oportunidades laborales y de crecimiento.</p>
+      <p>Me considero una persona constante, creativa y con ganas de superarme. Estoy construyendo mi futuro un proyecto a la vez.</p>
+
+      <ul class="fortalezas" aria-label="Fortalezas personales">
+          <!-- Grid de 3x2 fortalezas -->
+      </ul>
+        <div class="fortalezas-grid" aria-label="Fortalezas personales">
+          <div class="fortaleza-card">Creatividad</div>
+          <div class="fortaleza-card">Responsabilidad</div>
+          <div class="fortaleza-card">Ganas de aprender</div>
+          <div class="fortaleza-card">Trabajo en equipo</div>
+          <div class="fortaleza-card">Resolución de problemas</div>
+          <div class="fortaleza-card">Comunicación</div>
+        </div>
+    </section>
+  </main>
+
+  <div class="volver">
+    <a href="index.html">← Volver al inicio</a>
+  </div>
+
+  <button id="modoToggle">🌙 Modo Oscuro</button>
+
+  <script>
+    const botonModo = document.getElementById("modoToggle");
+    const body = document.body;
+
+    // Aplicar modo guardado (dark | light). Por defecto 'dark'
+    const modoGuardado = localStorage.getItem('modo') || 'dark';
+    if (modoGuardado === 'dark') {
+      body.classList.add('dark-mode');
+      body.classList.remove('light-mode');
+      botonModo.textContent = '☀️ Modo Claro';
+    } else {
+      body.classList.add('light-mode');
+      body.classList.remove('dark-mode');
+      botonModo.textContent = '🌙 Modo Oscuro';
+    }
+
+    botonModo.addEventListener('click', () => {
+      if (body.classList.contains('dark-mode')) {
+        body.classList.remove('dark-mode');
+        body.classList.add('light-mode');
+        localStorage.setItem('modo', 'light');
+        botonModo.textContent = '🌙 Modo Oscuro';
+      } else {
+        body.classList.remove('light-mode');
+        body.classList.add('dark-mode');
+        localStorage.setItem('modo', 'dark');
+        botonModo.textContent = '☀️ Modo Claro';
+      }
+    });
+  </script>
+  <script src="js2.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,344 @@
+body {
+  font-family: 'Inter', 'Poppins', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  margin: 0;
+  padding: 40px 0 0;
+  background: radial-gradient(circle at top, rgba(16, 82, 214, 0.16) 0%, rgba(8, 16, 42, 0.96) 35%, #02050e 100%);
+  color: #eef4ff;
+  animation: fadeIn 1.2s ease-in-out;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  overflow-x: hidden;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+main {
+  max-width: 920px;
+  margin: 90px auto;
+  padding: 42px;
+  background: rgba(4, 11, 35, 0.94);
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.35);
+  border-radius: 28px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 30px;
+  animation: slideUp 1.2s ease-in-out;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.foto {
+  flex: 1 1 250px;
+  text-align: center;
+}
+
+.foto img {
+  max-width: 250px;
+  border-radius: 50%;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  transition: transform 0.4s ease;
+}
+
+.foto img:hover {
+  transform: scale(1.05);
+}
+
+.info {
+  flex: 2 1 400px;
+}
+
+h1 {
+  text-align: center;
+  margin-top: 30px;
+  font-weight: 900;
+  letter-spacing: -0.03em;
+  animation: fadeIn 1.5s ease-in-out;
+  transition: color 0.3s ease;
+  font-size: clamp(3.4rem, 6vw, 5rem);
+  background: linear-gradient(90deg, #77c7ff 0%, #96e4ff 45%, #9de9d2 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.info p {
+  line-height: 1.95;
+  margin-bottom: 24px;
+  font-size: 1.18rem;
+  color: rgba(232, 240, 255, 0.94);
+  transition: color 0.3s ease;
+}
+
+.info strong {
+  color: #b6e0ff;
+  font-weight: 800;
+}
+
+.fortalezas {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 10px;
+}
+
+.fortalezas li {
+  margin-bottom: 12px;
+  font-weight: 700;
+  color: rgba(241, 248, 255, 0.96);
+  position: relative;
+  padding-left: 30px;
+  font-size: 1.05rem;
+  transition: color 0.3s ease;
+}
+
+.fortalezas li::before {
+  content: "✔";
+  position: absolute;
+  left: 0;
+  color: #48aaff;
+  transition: color 0.3s ease;
+}
+
+/* Grid de fortalezas 3x2 */
+.fortalezas-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-top: 12px;
+  width: 100%;
+  grid-auto-rows: minmax(120px, auto);
+  align-items: start;
+  justify-items: stretch;
+}
+
+.fortaleza-card {
+  padding: 12px 10px;
+  border-radius: 10px;
+  background: rgba(255,255,255,0.025);
+  border: 1px solid rgba(255,255,255,0.05);
+  text-align: left;
+  font-weight: 800;
+  color: rgba(240,248,255,0.96);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.12);
+  min-height: 130px;
+  font-size: 0.98rem;
+  line-height: 1.35;
+  display: flex;
+  align-items: flex-start;
+}
+
+@media (max-width: 900px) {
+  .fortalezas-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+  main {
+    max-width: 720px;
+    padding: 22px;
+    margin: 30px auto;
+  }
+}
+
+@media (max-width: 600px) {
+  .fortalezas-grid {
+    grid-template-columns: 1fr;
+  }
+  .foto img {
+    max-width: 180px;
+  }
+  main {
+    padding: 16px;
+    margin: 18px;
+  }
+}
+
+.volver {
+  text-align: center;
+  margin: 40px 0 10px;
+}
+
+.volver a {
+  background: linear-gradient(135deg, #5d8dff, #4ed7ff);
+  color: #081828;
+  padding: 16px 32px;
+  text-decoration: none;
+  border-radius: 999px;
+  font-weight: 700;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  display: inline-block;
+  cursor: pointer;
+  box-shadow: 0 18px 40px rgba(78, 215, 255, 0.22);
+}
+
+.volver a:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 18px 34px rgba(78, 215, 255, 0.22);
+}
+
+.volver a:hover {
+  background-color: #005f8c;
+  transform: scale(1.05);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 600px) {
+  main {
+    flex-direction: column;
+    padding: 20px;
+    margin: 20px;
+  }
+
+  .foto img {
+    max-width: 180px;
+  }
+
+  .info p {
+    font-size: 1em;
+  }
+
+  .volver a {
+    padding: 10px 20px;
+  }
+}
+
+#modoToggle {
+  position: fixed;
+  top: 15px;
+  right: 15px;
+  background-color: #005f8c;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+  z-index: 1000;
+}
+
+#modoToggle:hover {
+  background-color: #004471;
+}
+
+body.dark-mode {
+  background: linear-gradient(to bottom right, #121212, #1e1e1e);
+  color: #e0e0e0;
+}
+
+body.dark-mode main {
+  background-color: #2c2c2c;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+}
+
+body.dark-mode h1 {
+  color: #66ccff;
+}
+
+body.dark-mode .info p,
+body.dark-mode .fortalezas li {
+  color: #cbd5e1;
+}
+
+body.dark-mode .fortalezas li::before {
+  color: #48aaff;
+}
+
+body.dark-mode .volver a {
+  background-color: #555;
+  color: #e0e0e0;
+  box-shadow: none;
+}
+
+body.dark-mode .volver a:hover {
+  background-color: #777;
+  box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2);
+}
+
+/* Modo claro */
+body.light-mode {
+  background: #ffffff;
+  color: #0b1220;
+}
+
+body.light-mode main {
+  background: #ffffff;
+  color: #0b1220;
+  border: 1px solid rgba(2,6,23,0.06);
+  box-shadow: 0 18px 50px rgba(2,6,23,0.06);
+}
+
+body.light-mode .fortaleza-card {
+  background: #fbfdff;
+  color: #0b1220;
+  border: 1px solid rgba(2,6,23,0.06);
+  box-shadow: 0 8px 18px rgba(2,6,23,0.04);
+}
+
+/* Texto más grande y legible en modo claro */
+body.light-mode p,
+body.light-mode .info p,
+body.light-mode .sobre-mi-content p,
+body.light-mode .fortaleza-card {
+  font-size: 1.18rem;
+  line-height: 1.9;
+}
+
+body.light-mode .sobre-mi-content h2 {
+  font-size: clamp(3.2rem, 4.2vw, 4.2rem);
+}
+
+body.light-mode .volver a {
+  background: linear-gradient(135deg, #5d8dff, #4ed7ff);
+  color: #081828;
+}
+
+body.light-mode #modoToggle {
+  background-color: #0ea5e9;
+  color: #fff;
+}
+
+/* Colores de texto en modo claro para sobre-mi */
+body.light-mode h1,
+body.light-mode h2,
+body.light-mode h3 {
+  color: #0f1724;
+}
+
+body.light-mode p,
+body.light-mode a,
+body.light-mode li,
+body.light-mode span {
+  color: #1f2937;
+}
+
+body.light-mode .fortaleza-card {
+  color: #0b1220;
+}
+
+/* Letras más notorias en modo claro */
+body.light-mode h1,
+body.light-mode h2,
+body.light-mode h3 {
+  color: #1d4ed8;
+}
+
+body.light-mode p,
+body.light-mode a,
+body.light-mode li,
+body.light-mode span {
+  color: #0b1220;
+}
+
+body.light-mode nav a,
+body.light-mode a {
+  color: #1d4ed8;
+}

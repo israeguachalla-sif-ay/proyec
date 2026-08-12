@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mis Trabajos - Juan Carlos Aruquipa</title>
+  <link rel="stylesheet" href="mis-trabajos.css">
+  </head>
+<body>
+
+  <header>
+    <h1>Galería de Mis Trabajos</h1>
+    <p>Proyectos realizados en la materia de Diseño y Programación Web</p>
+    <button id="modoToggle">🌙 Modo Oscuro</button>
+  </header>
+
+  <div class="filtros">
+    <button onclick="filtrar('todos')">Todos</button>
+    <button onclick="filtrar('html')">HTML</button>
+    <button onclick="filtrar('css')">CSS</button>
+  </div>
+
+  <section class="galeria" id="galeria">
+    <!-- Solo esta pertenece a HTML -->
+    <a href="#img4"><img src="img7.png" alt="Trabajo HTML" data-categoria="html" /></a>
+
+    <!-- Las siguientes son CSS -->
+    <a href="#img1"><img src="im4.png" alt="Trabajo CSS" data-categoria="css" /></a>
+    <a href="#img2"><img src="img5.png" alt="Trabajo CSS" data-categoria="css" /></a>
+    <a href="#img3"><img src="img6.png" alt="Trabajo CSS" data-categoria="css" /></a>
+    <a href="#img5"><img src="img8.png" alt="Trabajo CSS" data-categoria="css" /></a>
+    <a href="#img6"><img src="img9.png" alt="Trabajo CSS" data-categoria="css" /></a>
+    <a href="#img7"><img src="img10.png" alt="Trabajo CSS" data-categoria="css" /></a>
+    <a href="#img8"><img src="img11.png" alt="Trabajo CSS" data-categoria="css" /></a>
+  </section>
+
+  <!-- Lightboxes -->
+  <div id="img1" class="lightbox"><a href="#" class="close">&times;</a><img src="im4.png" alt=""></div>
+  <div id="img2" class="lightbox"><a href="#" class="close">&times;</a><img src="img5.png" alt=""></div>
+  <div id="img3" class="lightbox"><a href="#" class="close">&times;</a><img src="img6.png" alt=""></div>
+  <div id="img4" class="lightbox"><a href="#" class="close">&times;</a><img src="img7.png" alt=""></div>
+  <div id="img5" class="lightbox"><a href="#" class="close">&times;</a><img src="img8.png" alt=""></div>
+  <div id="img6" class="lightbox"><a href="#" class="close">&times;</a><img src="img9.png" alt=""></div>
+  <div id="img7" class="lightbox"><a href="#" class="close">&times;</a><img src="img10.png" alt=""></div>
+  <div id="img8" class="lightbox"><a href="#" class="close">&times;</a><img src="img11.png" alt=""></div>
+
+  <div class="volver">
+    <a href="index.html">← Volver al inicio</a>
+  </div>
+
+  <script>
+    // Filtrado por categoría
+    function filtrar(categoria) {
+      const imagenes = document.querySelectorAll('.galeria a');
+      imagenes.forEach(link => {
+        const img = link.querySelector('img');
+        if (categoria === 'todos' || img.dataset.categoria === categoria) {
+          link.style.display = 'block';
+        } else {
+          link.style.display = 'none';
+        }
+      });
+    }
+
+    // Mostrar galería con animación al cargar
+    window.addEventListener("load", () => {
+      document.getElementById("galeria").style.opacity = 1;
+    });
+
+    // Modo oscuro con persistencia
+    const botonModo = document.getElementById("modoToggle");
+    const body = document.body;
+
+    // Aplicar modo guardado (dark | light). Por defecto 'dark'
+    const modoGuardado = localStorage.getItem('modo') || 'dark';
+    if (modoGuardado === 'dark') {
+      body.classList.add('dark-mode');
+      body.classList.remove('light-mode');
+      botonModo.textContent = '☀️ Modo Claro';
+    } else {
+      body.classList.add('light-mode');
+      body.classList.remove('dark-mode');
+      botonModo.textContent = '🌙 Modo Oscuro';
+    }
+
+    botonModo.addEventListener('click', () => {
+      if (body.classList.contains('dark-mode')) {
+        body.classList.remove('dark-mode');
+        body.classList.add('light-mode');
+        localStorage.setItem('modo', 'light');
+        botonModo.textContent = '🌙 Modo Oscuro';
+      } else {
+        body.classList.remove('light-mode');
+        body.classList.add('dark-mode');
+        localStorage.setItem('modo', 'dark');
+        botonModo.textContent = '☀️ Modo Claro';
+      }
+    });
+  </script>
+  <script src="js1.js"></script>
+  <script src="js2.js"></script>
+</body>
+</html>
+
+
+
+
+

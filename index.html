@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Israel G.F</title>
+  <link rel="stylesheet" href="miBlog.css">
+  </head>
+<body>
+
+  <!-- Navegación -->
+  <header>
+    <div class="brand">Israel Guachalla </div>
+    <nav>
+      <a href="#sobre">Sobre mí</a>
+      <a href="#servicios">Servicios</a>
+      <a href="contacto.html">Contacto</a>
+    </nav>
+    <button class="modo-toggle" id="modoToggle">🌙 Modo Oscuro</button>
+  </header>
+
+  <!-- Portada -->
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="hero-subtitle">Hola, soy</div>
+      <h1 class="hero-title">Israel Guachalla Fernandez.</h1>
+      <p class="hero-description">Diseñador y desarrollador web enfocado en crear experiencias digitales extraordinarias y de alto rendimiento.</p>
+      <div class="hero-actions">
+        <a href="mis-trabajos.html" class="btn-primary" target="_blank">Ver mis trabajos</a>
+        <a href="sobre-mi.html" class="btn-secondary">Conocer más</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sobre mí -->
+  <section class="sobre-mi" id="sobre">
+    <div class="sobre-mi-inner">
+      <img src="yo2.jpeg" alt="Foto de Israel">
+      <div class="sobre-mi-content">
+        <h2>Sobre mí</h2>
+        <p>Mi nombre es Israel Guachalla Fernandez, y pronto seré un diseñador de páginas web. Tengo 19 años y este es mi segundo año como estudiante de la carrera de SISTEMAS INFORMÁTICOS.</p>
+        <p>Aprendo con entusiasmo lo que los licenciados nos enseñan, especialmente la materia de DISEÑO Y PROGRAMACIÓN WEB, ya que me servira de mucho en la vida de programador.</p>
+        <p>Haz clic en el botón de abajo para ver todos mis trabajos.</p>
+        <a href="sobre-mi.html" class="btn-secondary">VER MÁS SOBRE MÍ</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Servicios -->
+  <section class="servicios" id="servicios">
+    <h2>Servicios</h2>
+    <div class="servicio-grid">
+      <div class="caja">
+        <h3>Desarrollo Web</h3>
+        <p>Creación de páginas web con HTML, CSS y JavaScript. Diseños modernos, funcionales y adaptables.</p>
+      </div>
+
+      <div class="caja">
+        <h3>Programación</h3>
+        <p>Desarrollo de programas en Java y C/C++. Resolución de problemas y ejercicios mediante programación.</p>
+      </div>
+
+      <div class="caja">
+        <h3>Bases de Datos</h3>
+        <p>Diseño y manejo de bases de datos con MySQL. Creación de tablas, consultas SQL y relaciones.</p>
+      </div>
+
+      <div class="caja">
+        <h3>Proyectos Arduino</h3>
+        <p>Diseño de proyectos con Arduino y componentes electrónicos. Automatización, sensores y motores.</p>
+      </div>
+
+      <div class="caja">
+        <h3>Diseño Responsive</h3>
+        <p>Adaptación de páginas web para computadoras, tablets y celulares. Interfaces fáciles de usar y navegar.</p>
+      </div>
+
+      <div class="caja">
+        <h3>Estructura de Datos</h3>
+        <p>Implementación de listas, pilas, colas, matrices y otras estructuras. Desarrollo de soluciones utilizando nodos y algoritmos.</p>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- Contacto -->
+  <section id="contacto" class="contacto">
+    <h2>Contacto</h2>
+    <p>Puedes encontrarme en mis redes sociales:</p>
+    <div class="redes">
+      <a href="https://www.facebook.com/share/1B2pwtHwh8/" target="_blank">
+        <img src="face.png" alt="Facebook">
+      </a>
+      <a href="https://www.instagram.com/d22_azzr.fx?igsh=MmNqcXRwdzZ0enEx" target="_blank">
+        <img src="Instagram.png" alt="Instagram">
+      </a>
+      <a href="https://wa.me/59165571851" target="_blank">
+        <img src="whatsapp.webp" alt="WhatsApp">
+      </a>
+    </div>
+  </section>
+
+  <!-- Script para alternar modo (persistente: 'modo' = 'dark'|'light') -->
+  <script>
+    const botonModo = document.getElementById('modoToggle');
+    const body = document.body;
+
+    // Aplicar modo guardado (dark | light). Por defecto 'dark'
+    const modoGuardado = localStorage.getItem('modo') || 'dark';
+    if (modoGuardado === 'dark') {
+      body.classList.add('dark-mode');
+      body.classList.remove('light-mode');
+      botonModo.textContent = '☀️ Modo Claro';
+    } else {
+      body.classList.add('light-mode');
+      body.classList.remove('dark-mode');
+      botonModo.textContent = '🌙 Modo Oscuro';
+    }
+
+    botonModo.addEventListener('click', () => {
+      if (body.classList.contains('dark-mode')) {
+        // Pasar a claro
+        body.classList.remove('dark-mode');
+        body.classList.add('light-mode');
+        localStorage.setItem('modo', 'light');
+        botonModo.textContent = '🌙 Modo Oscuro';
+      } else {
+        // Pasar a oscuro
+        body.classList.remove('light-mode');
+        body.classList.add('dark-mode');
+        localStorage.setItem('modo', 'dark');
+        botonModo.textContent = '☀️ Modo Claro';
+      }
+    });
+  </script>
+  <script src="js1.js"></script>
+
+</body>
+</html>
